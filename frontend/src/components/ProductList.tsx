@@ -22,7 +22,7 @@ const ProductList: React.FC = () => {
         const fetchProducts = async () => {
             try {
                 setLoading( true );
-                const response = await axios.get( `https://laravel.code-craft.am/backend/api/products` );
+                const response = await axios.get( `${backendUrl}/api/products` );
                 setProducts( response?.data?.products );
                 setLoading( false ); // Set loading after fetch
             } catch (error) {
