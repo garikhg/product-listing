@@ -22,7 +22,7 @@ function App() {
                 </div>
             </main>
 
-            <footer className="py-12">
+            <footer className="py-12 mt-auto">
                 <div className="container">
                     Footer
                 </div>
