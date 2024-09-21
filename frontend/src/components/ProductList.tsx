@@ -16,12 +16,13 @@ const ProductList: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState( '' );
     const [loading, setLoading] = useState( true );
     const backendUrl = import.meta.env.VITE_LARAVEL_BACKEND_URL || 'http://localhost:8000';
+    console.log(backendUrl);
 
     useEffect( () => {
         const fetchProducts = async () => {
             try {
                 setLoading( true );
-                const response = await axios.get( `${backendUrl}/api/products` );
+                const response = await axios.get( `https://laravel.code-craft.am/backend/api/products` );
                 setProducts( response?.data?.products );
                 setLoading( false ); // Set loading after fetch
             } catch (error) {
