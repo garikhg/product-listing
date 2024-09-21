@@ -15,12 +15,13 @@ const ProductList: React.FC = () => {
     const [products, setProducts] = useState<Product[]>( [] );
     const [searchTerm, setSearchTerm] = useState( '' );
     const [loading, setLoading] = useState( true );
+    const backendUrl = import.meta.env.VITE_LARAVEL_BACKEND_URL || 'http://localhost:8000';
 
     useEffect( () => {
         const fetchProducts = async () => {
             try {
                 setLoading( true );
-                const response = await axios.get( 'http://127.0.0.1:8000/api/products' );
+                const response = await axios.get( `${backendUrl}/api/products` );
                 setProducts( response?.data?.products );
                 setLoading( false ); // Set loading after fetch
             } catch (error) {
