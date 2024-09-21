@@ -18,7 +18,6 @@ const ProductList: React.FC = () => {
     const backendUrl = import.meta.env.VITE_LARAVEL_BACKEND_URL || 'http://localhost:8000';
 
     useEffect( () => {
-        console.log( backendUrl );
         const fetchProducts = async () => {
             try {
                 setLoading( true );
