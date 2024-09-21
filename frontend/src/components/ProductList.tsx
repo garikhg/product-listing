@@ -50,7 +50,7 @@ const ProductList: React.FC = () => {
             {loading ? Array( 30 ).fill( 0 ).map( (_, index) => (
                 <div key={index}>Loading products...</div>
             ) ) : (
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {filteredProducts.length > 0 ? (
                         filteredProducts.map( (product) => (
                             <div key={product.id}>
